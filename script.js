@@ -1,8 +1,8 @@
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const revealElements = document.querySelectorAll(".reveal");
+const revealItems = document.querySelectorAll(".reveal");
 
-if ("IntersectionObserver" in window && !prefersReducedMotion) {
+if ("IntersectionObserver" in window && !reducedMotion) {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -11,41 +11,42 @@ if ("IntersectionObserver" in window && !prefersReducedMotion) {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.18, rootMargin: "0px 0px -60px 0px" }
+    { threshold: 0.16, rootMargin: "0px 0px -72px 0px" }
   );
 
-  revealElements.forEach((element) => revealObserver.observe(element));
+  revealItems.forEach((item) => revealObserver.observe(item));
 } else {
-  revealElements.forEach((element) => element.classList.add("is-visible"));
+  revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-const tiltTarget = document.querySelector("[data-tilt]");
-const canTilt = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+const machine = document.querySelector("[data-tilt]");
+const hasPrecisePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-if (tiltTarget && canTilt && !prefersReducedMotion) {
-  tiltTarget.addEventListener("pointermove", (event) => {
-    const rect = tiltTarget.getBoundingClientRect();
+if (machine && hasPrecisePointer && !reducedMotion) {
+  machine.addEventListener("pointermove", (event) => {
+    const rect = machine.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width - 0.5;
     const y = (event.clientY - rect.top) / rect.height - 0.5;
-    const rotateX = y * -5;
-    const rotateY = x * 6;
 
-    tiltTarget.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px)`;
+    machine.style.transform = `rotateX(${y * -4}deg) rotateY(${x * 5}deg) translateY(-4px)`;
   });
 
-  tiltTarget.addEventListener("pointerleave", () => {
-    tiltTarget.style.transform = "";
+  machine.addEventListener("pointerleave", () => {
+    machine.style.transform = "";
   });
 }
 
-const statusRows = document.querySelectorAll(".check-list li");
+const signalRows = document.querySelectorAll(".signal-list li");
 
-if (statusRows.length && !prefersReducedMotion) {
-  let activeIndex = 0;
+if (signalRows.length && !reducedMotion) {
+  let activeSignal = 0;
 
-  window.setInterval(() => {
-    statusRows.forEach((row) => row.removeAttribute("data-active"));
-    statusRows[activeIndex].setAttribute("data-active", "true");
-    activeIndex = (activeIndex + 1) % statusRows.length;
-  }, 1400);
+  const cycleSignal = () => {
+    signalRows.forEach((row) => row.removeAttribute("data-active"));
+    signalRows[activeSignal].setAttribute("data-active", "true");
+    activeSignal = (activeSignal + 1) % signalRows.length;
+  };
+
+  cycleSignal();
+  window.setInterval(cycleSignal, 1250);
 }
