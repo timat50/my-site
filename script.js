@@ -18,18 +18,3 @@ if ("IntersectionObserver" in window && !reducedMotion) {
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
-
-const signalRows = document.querySelectorAll(".signal-list li");
-
-if (signalRows.length && !reducedMotion) {
-  let activeSignal = 0;
-
-  const cycleSignal = () => {
-    signalRows.forEach((row) => row.removeAttribute("data-active"));
-    signalRows[activeSignal].setAttribute("data-active", "true");
-    activeSignal = (activeSignal + 1) % signalRows.length;
-  };
-
-  cycleSignal();
-  window.setInterval(cycleSignal, 1250);
-}
