@@ -29,9 +29,9 @@
   --space-24: 96px;
   --radius-sm: 4px;
   --radius-md: 8px;
-  --radius-lg: 14px;
-  --radius-xl: 22px;
-  --radius-2xl: 34px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 14px;
   --radius-full: 999px;
   --font-display: "Fraunces", Georgia, serif;
   --font-body: "Commissioner", "Segoe UI", sans-serif;
@@ -58,7 +58,7 @@
   --shadow-xs: 0 8px 18px rgba(17, 23, 21, 0.08);
   --shadow-sm: 0 16px 36px rgba(17, 23, 21, 0.1);
   --shadow-md: 0 26px 70px rgba(17, 23, 21, 0.15);
-  --shadow-glow: 0 0 44px rgba(0, 169, 150, 0.32);
+  --shadow-glow: 0 0 0 rgba(0, 169, 150, 0);
   --duration-fast: 150ms;
   --duration-normal: 280ms;
   --duration-slow: 560ms;
@@ -82,10 +82,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--font-base);
   line-height: var(--leading-normal);
-  background:
-    linear-gradient(115deg, rgba(200, 255, 100, 0.12), transparent 34rem),
-    linear-gradient(255deg, rgba(76, 200, 255, 0.14), transparent 32rem),
-    linear-gradient(140deg, #fff7e3 0%, var(--color-surface-base) 38%, #eaf8ef 100%);
+  background: linear-gradient(140deg, #fffaf0 0%, var(--color-surface-base) 52%, #edf6ef 100%);
   overflow-x: hidden;
 }
 
@@ -145,9 +142,8 @@ a {
   padding-inline: var(--space-4);
   border: 1px solid rgba(17, 23, 21, 0.1);
   border-radius: var(--radius-full);
-  background: rgba(255, 253, 244, 0.76);
+  background: rgba(255, 253, 244, 0.96);
   box-shadow: var(--shadow-xs);
-  backdrop-filter: blur(20px);
 }
 
 main {
@@ -250,7 +246,6 @@ section {
   font-size: var(--font-xs);
   font-weight: var(--weight-bold);
   letter-spacing: var(--tracking-normal);
-  text-transform: uppercase;
 }
 
 h1,
@@ -322,15 +317,14 @@ h3 {
 
 .button-primary {
   color: var(--color-inverse);
-  background: linear-gradient(135deg, var(--color-ink) 0%, #053f39 100%);
-  box-shadow: 0 18px 38px rgba(17, 23, 21, 0.22), var(--shadow-glow);
+  background: var(--color-ink);
+  box-shadow: 0 14px 28px rgba(17, 23, 21, 0.18);
 }
 
 .button-secondary {
   border-color: var(--color-line);
-  background: rgba(255, 253, 244, 0.72);
+  background: rgba(255, 253, 244, 0.88);
   color: var(--color-ink);
-  backdrop-filter: blur(16px);
 }
 
 .button:hover,
@@ -364,12 +358,8 @@ h3 {
   border: 1px solid rgba(17, 23, 21, 0.16);
   border-radius: var(--radius-2xl);
   background:
-    linear-gradient(145deg, rgba(255, 253, 244, 0.94), rgba(225, 245, 236, 0.78)),
-    linear-gradient(35deg, transparent 58%, rgba(200, 255, 100, 0.18));
+    linear-gradient(145deg, rgba(255, 253, 244, 0.98), rgba(231, 243, 236, 0.88));
   box-shadow: var(--shadow-md);
-  backdrop-filter: blur(24px);
-  transform-style: preserve-3d;
-  transition: transform var(--duration-normal) var(--ease-spring);
 }
 
 .diagnostic-machine::before {
@@ -379,7 +369,6 @@ h3 {
   content: "";
   border: 1px solid rgba(0, 169, 150, 0.18);
   border-radius: calc(var(--radius-2xl) + 18px);
-  transform: rotate(-2.5deg);
 }
 
 .machine-head {
@@ -538,7 +527,7 @@ h3 {
 
 .score-number {
   font-family: var(--font-mono);
-  font-size: clamp(3rem, 12vw, 5.2rem);
+  font-size: clamp(3rem, 10vw, 4.8rem);
   font-weight: var(--weight-bold);
   line-height: 0.86;
 }
@@ -622,9 +611,8 @@ h3 {
   padding: var(--space-4);
   border: 1px solid rgba(255, 255, 255, 0.76);
   border-radius: var(--radius-md);
-  background: rgba(255, 253, 244, 0.78);
+  background: rgba(255, 253, 244, 0.94);
   box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(18px);
   animation: ticketFloat 4.8s var(--ease-out) infinite alternate;
 }
 
@@ -701,7 +689,7 @@ h3 {
 .flow-lanes {
   display: grid;
   border: 1px solid var(--color-line);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-md);
   overflow: hidden;
   background: rgba(255, 253, 244, 0.48);
 }
@@ -710,9 +698,7 @@ h3 {
   min-height: 240px;
   padding: var(--space-6);
   border-bottom: 1px solid var(--color-line);
-  background:
-    linear-gradient(180deg, rgba(255, 253, 244, 0.7), rgba(255, 253, 244, 0.34)),
-    radial-gradient(circle at 100% 0%, rgba(0, 169, 150, 0.12), transparent 32%);
+  background: rgba(255, 253, 244, 0.68);
 }
 
 .flow-lane:last-child {
@@ -752,9 +738,7 @@ h3 {
 
 .price-row.featured {
   border-color: rgba(0, 169, 150, 0.45);
-  background:
-    linear-gradient(135deg, rgba(233, 255, 244, 0.88), rgba(255, 253, 244, 0.66)),
-    radial-gradient(circle at 100% 0%, rgba(200, 255, 100, 0.28), transparent 34%);
+  background: rgba(233, 255, 244, 0.88);
   box-shadow: var(--shadow-sm);
 }
 
@@ -798,10 +782,8 @@ h3 {
   max-width: 960px;
   padding: var(--space-8);
   border: 1px solid var(--color-line);
-  border-radius: var(--radius-2xl);
-  background:
-    linear-gradient(135deg, rgba(255, 253, 244, 0.82), rgba(229, 249, 238, 0.74)),
-    radial-gradient(circle at 96% 12%, rgba(76, 200, 255, 0.24), transparent 32%);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 253, 244, 0.86);
   box-shadow: var(--shadow-md);
 }
 

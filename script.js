@@ -19,23 +19,6 @@ if ("IntersectionObserver" in window && !reducedMotion) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-const machine = document.querySelector("[data-tilt]");
-const hasPrecisePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-
-if (machine && hasPrecisePointer && !reducedMotion) {
-  machine.addEventListener("pointermove", (event) => {
-    const rect = machine.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-
-    machine.style.transform = `rotateX(${y * -4}deg) rotateY(${x * 5}deg) translateY(-4px)`;
-  });
-
-  machine.addEventListener("pointerleave", () => {
-    machine.style.transform = "";
-  });
-}
-
 const signalRows = document.querySelectorAll(".signal-list li");
 
 if (signalRows.length && !reducedMotion) {
