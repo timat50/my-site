@@ -27,8 +27,8 @@
       <nav class="nav-links" aria-label="Основни секции">
         <a href="#main">Начало</a>
         <a href="#audit">Аудит</a>
-        <a href="#fixes">Услуги</a>
-        <a href="#prices">Цени</a>
+        <a href="#service-cards">Услуги</a>
+        <a href="#price-board">Цени</a>
         <a href="#contact">Контакт</a>
       </nav>
       <a class="header-cta" href="#contact">Пиши ни</a>
@@ -49,9 +49,15 @@
               <a class="button button-primary" href="#contact">
                 Пиши ни
               </a>
-              <a class="button button-secondary" href="#prices">
+              <a class="button button-secondary" href="#price-board">
                 Виж цените
               </a>
+            </div>
+
+            <div class="hero-notes" aria-label="Основни точки">
+              <span>Google Maps профил</span>
+              <span>снимки и услуги</span>
+              <span>следваща стъпка</span>
             </div>
           </div>
 
@@ -69,22 +75,33 @@
               </div>
 
               <div class="profile-preview" aria-hidden="true">
-                <div class="chat-line chat-client">Здравейте, имате ли свободен час?</div>
-                <div class="profile-card-mini">
-                  <div class="profile-photo">
-                    <span>Maps</span>
+                <div class="maps-window">
+                  <div class="maps-photo-strip">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                   </div>
-                  <div>
-                    <strong>Вашият профил</strong>
-                    <span>снимки, услуги, отзиви, контакт</span>
+                  <div class="maps-body">
+                    <div class="maps-title">
+                      <strong>Вашият профил</strong>
+                      <span>отворен след чат с клиента</span>
+                    </div>
+                    <div class="maps-rating">
+                      <strong>4.6</strong>
+                      <span>отзиви</span>
+                    </div>
+                  </div>
+                  <div class="maps-actions">
+                    <span>Обади се</span>
+                    <span>Маршрут</span>
+                    <span>Сайт</span>
+                  </div>
+                  <div class="maps-list">
+                    <span>Услуги: непълни</span>
+                    <span>Снимки: стари</span>
+                    <span>Контакт: видим</span>
                   </div>
                 </div>
-                <div class="profile-actions">
-                  <span>Снимки</span>
-                  <span>Услуги</span>
-                  <span>Отзиви</span>
-                </div>
-                <div class="chat-line chat-note">Ако профилът изглежда празен, разговорът често спира.</div>
               </div>
 
               <div class="diagnostic-output">
@@ -146,27 +163,55 @@
         </div>
       </section>
 
+      <section class="snapshot section-shell reveal" aria-label="Какво излиза от проверката">
+        <div class="snapshot-intro">
+          <span class="section-tag">След проверката</span>
+          <h2>Една ясна картина, без дълъг доклад.</h2>
+        </div>
+        <div class="snapshot-grid">
+          <div>
+            <span>01</span>
+            <strong>Какво изглежда старо</strong>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>Кое липсва в профила</strong>
+          </div>
+          <div>
+            <span>03</span>
+            <strong>Къде клиентът се колебае</strong>
+          </div>
+          <div>
+            <span>04</span>
+            <strong>Каква е първата поправка</strong>
+          </div>
+        </div>
+      </section>
+
       <section id="fixes" class="fix-flow section-shell" aria-labelledby="fix-title">
         <div class="section-heading reveal">
           <div class="section-tag">След безплатния аудит</div>
           <h2 id="fix-title">Ако има какво да се оправи, започваме от малкото.</h2>
         </div>
 
-        <div class="flow-lanes">
+        <div id="service-cards" class="flow-lanes">
           <article class="flow-lane reveal">
             <span class="lane-number">01</span>
             <h3>Мини аудит</h3>
             <p>Получавате кратък списък: какво е ок, какво липсва и какво да се пипне първо.</p>
+            <div class="lane-footer">първо: профил + снимки</div>
           </article>
           <article class="flow-lane reveal">
             <span class="lane-number">02</span>
             <h3>Google Maps Basic</h3>
             <p>Подреждане на снимки, услуги, описание, работно време и контакт.</p>
+            <div class="lane-footer">най-честа поправка</div>
           </article>
           <article class="flow-lane reveal">
             <span class="lane-number">03</span>
             <h3>Мини сайт</h3>
             <p>Една страница, ако профилът в Maps не стига да обясни услугите и цените.</p>
+            <div class="lane-footer">когато трябва повече място</div>
           </article>
         </div>
       </section>
@@ -177,20 +222,30 @@
           <h2 id="prices-title">Цени за малки поправки, не за дълъг ребранд.</h2>
         </div>
 
-        <div class="price-board">
+        <div id="price-board" class="price-board">
           <article class="price-row reveal">
             <div>
               <h3>Мини аудит</h3>
               <p>Проверка на профил, снимки, услуги, отзиви и контакт.</p>
             </div>
             <strong>€0</strong>
+            <ul>
+              <li>кратък списък с проблеми</li>
+              <li>първа препоръка</li>
+              <li>без ангажимент</li>
+            </ul>
           </article>
-          <article class="price-row featured reveal">
+          <article class="price-row reveal">
             <div>
               <h3>Google Maps Basic</h3>
               <p>Основно подреждане на профила след аудита.</p>
             </div>
             <strong>€30–50</strong>
+            <ul>
+              <li>описание и услуги</li>
+              <li>работно време и контакт</li>
+              <li>подредени снимки</li>
+            </ul>
           </article>
           <article class="price-row reveal">
             <div>
@@ -198,6 +253,11 @@
               <p>Една страница за услуги, доверие, контакт и мобилна версия.</p>
             </div>
             <strong>€100–200</strong>
+            <ul>
+              <li>услуги и кратко представяне</li>
+              <li>мобилна версия</li>
+              <li>бутон за контакт</li>
+            </ul>
           </article>
           <article class="price-row reveal">
             <div>
@@ -205,12 +265,17 @@
               <p>Меню, цени, QR за отзиви или практичен файл за изпращане.</p>
             </div>
             <strong>€30–80</strong>
+            <ul>
+              <li>удобно за изпращане</li>
+              <li>цени или меню</li>
+              <li>QR за отзиви</li>
+            </ul>
           </article>
         </div>
       </section>
 
       <section class="case section-shell reveal" aria-labelledby="case-title">
-        <div>
+        <div class="case-copy">
           <div class="section-tag">Честен пример</div>
           <h2 id="case-title">Един реализиран сайт, не измислено портфолио.</h2>
           <p>
@@ -218,10 +283,14 @@
             Услуги, контакти, мобилна версия, ясна структура.
           </p>
         </div>
-        <a class="case-button" href="https://metrograd.royal-wall.com/" target="_blank" rel="noreferrer">
-          Виж примера
-          <span aria-hidden="true">↗</span>
-        </a>
+        <div class="case-preview">
+          <span>metrograd.royal-wall.com</span>
+          <strong>Едностраничен сайт за строителна фирма</strong>
+          <a class="case-button" href="https://metrograd.royal-wall.com/" target="_blank" rel="noreferrer">
+            Виж примера
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </section>
 
       <section id="contact" class="final-cta section-shell reveal" aria-labelledby="contact-title">
@@ -234,10 +303,10 @@
           </p>
           <div class="hero-actions" aria-label="Контакт за безплатен аудит">
             <a class="button button-primary" href="viber://chat?number=%2B359884343110">
-              Пиши ни
+              Viber
             </a>
-            <a class="button button-secondary" href="https://wa.me/359884343110">
-              WhatsApp
+            <a class="button button-secondary" href="mailto:hello@onlinecheck.bg">
+              hello@onlinecheck.bg
             </a>
           </div>
         </div>
